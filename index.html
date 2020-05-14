@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>FLEXBOX NAV</title>
+</head>
+<body>
+    <header>
+      <img class="logo" src="https://picsum.photos/70" alt="">
+      <input type="checkbox" id="mobile-icon">
+      <label for="mobile-icon" class="toggle"><span class="hamburger-icon"></span></label>
+      <nav id="main-nav">
+            <ul class="nav-items">
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a class="hide-mobile" href="#">Services<span class="arrow">&#x25bc;</span></a>
+                    <label for="submenu-click" class="submenu-click">Services <span class="arrow">&#x25bc;</span></label>
+                    <input id="submenu-click" type="checkbox">
+                    <ul class="submenu">
+                        <li><a href="#">Android Dev</a></li>
+                        <li><a href="#">iOS Dev</a></li>
+                        <li>
+                          <a class="hide-mobile" href="#">Web Dev<span class="arrow">&#x25b6;</span></a>
+                          <label for="submenu-2-click" class="submenu-2-click">Web Dev<span class="arrow">&#x25bc;</span></label>
+                          <input id="submenu-2-click" type="checkbox">
+                          <ul class="submenu-2">
+                              <li><a href="#">NodeJS</a></li>
+                              <li><a href="#">PHP</a></li>
+                              <li><a href="#">Python</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Downloads</a></li>
+                <li>
+                  <a class="hide-mobile" href="#">FAQ<span class="arrow">&#x25bc;</span></a>
+                  <label for="submenu-3-click" class="submenu-3-click">FAQ show<span class="arrow">&#x25bc;</span></label>
+                  <input id="submenu-3-click" type="checkbox">
+                    <ul class="submenu">
+                        <li><a href="#">Android</a></li>
+                        <li><a href="#">iOS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+            </ul>
+      </nav>
+    </header>
+    <section><h1>Hello World</h1></section>
+</body>
+</html>
