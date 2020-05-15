@@ -25,14 +25,14 @@ header{
 nav{
   flex: 1 1 100%;
 }
-#main-nav ul{
+nav ul{
   list-style:none;
 }
 #mobile-icon,#submenu-click,#submenu-2-click, #submenu-3-click{
   display:none;
 }
 
-#main-nav a, .submenu-click,.submenu-2-click, .submenu-3-click{
+nav a, nav label{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -45,7 +45,7 @@ nav{
     height:64px;
     transition:background .4s;
 }
-#main-nav a:hover, .submenu-click:hover{
+nav a:hover, .submenu-click:hover{
   background:#305753;
 }
 
@@ -68,7 +68,7 @@ nav{
   .nav-items ul{
     padding-left:1rem;
   }
-  #submenu-click:checked ~ .submenu,
+  #submenu-click:checked ~ .submenu-1,
   #submenu-2-click:checked ~ .submenu-2,
   #submenu-3-click:checked ~ .submenu-3 {
     max-height:100vh;
@@ -103,7 +103,7 @@ nav{
   .hamburger-icon:after{
     top:-5px;
   }
-  #main-nav .hide-mobile{
+  .hide-mobile{
     display:none;
   }
 
@@ -123,11 +123,11 @@ nav{
   .toggle, .submenu-click, .submenu-2-click, .submenu-3-click{
     display: none;
   }
-  #main-nav ul{
+  nav ul{
     display:flex;
   }
 
-  #main-nav li{
+  nav li{
     position: relative;
   }
   nav ul ul{
@@ -135,7 +135,7 @@ nav{
     overflow: hidden;
     transition: max-height .2s ease-out;
   }
-  .submenu, .submenu-3{
+  .submenu-1, .submenu-3{
     flex-direction: column;
     position: absolute;
     width:140px;
