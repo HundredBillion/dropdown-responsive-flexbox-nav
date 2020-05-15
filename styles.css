@@ -9,13 +9,12 @@ header{
   display:flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap:wrap;
-  
+  flex-wrap:wrap; 
 }
 .logo{
   cursor: pointer;
-  max-width: 70px;
   padding:0 1rem;
+  border-radius: 50%;
 }
 .toggle{
   cursor: pointer;
@@ -28,49 +27,45 @@ nav{
 nav ul{
   list-style:none;
 }
-#mobile-icon,#submenu-click,#submenu-2-click, #submenu-3-click{
+#mobile-icon, [id^=submenu]{
   display:none;
 }
-
 nav a, nav label{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color:#f6f7f8;
-    background: #254441;
-    text-decoration: none;
-    display:flex;
-    align-items: center;
-    padding:0 1rem;
-    height:64px;
-    transition:background .4s;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color:#f6f7f8;
+  background: #254441;
+  text-decoration: none;
+  display:flex;
+  align-items: center;
+  padding:0 1rem;
+  height:64px;
+  transition:background .4s ease-out;
 }
-nav a:hover, .submenu-click:hover{
+nav a:hover, nav label:hover{
   background:#305753;
 }
-
 .arrow{
   margin-left:9px;
   margin-top:4px;
   color:#eee;
   font-size:10px;
 } 
+/*------- mobile nav --------*/
 @media (max-width: 767px){
   nav ul{
     max-height:0;
     overflow: hidden;
-    transition: max-height .2s ease-out;
+    transition: max-height .3s ease-out;
   }
   #mobile-icon:checked ~ nav > ul{
     max-height: 100vh;
   }
-
   .nav-items ul{
     padding-left:1rem;
   }
-  #submenu-click:checked ~ .submenu-1,
-  #submenu-2-click:checked ~ .submenu-2,
-  #submenu-3-click:checked ~ .submenu-3 {
+  [id^=submenu]:checked ~ [class^=submenu]{
     max-height:100vh;
     overflow:visible;
   }
@@ -79,7 +74,6 @@ nav a:hover, .submenu-click:hover{
     border-radius: 50em;
     transition:all .2s ease-out;
   }
-
   .hamburger-icon{
     width:18px;
     height:3px;
@@ -106,27 +100,21 @@ nav a:hover, .submenu-click:hover{
   .hide-mobile{
     display:none;
   }
-
 }
-
+/*-------desktop nav --------*/
 @media (min-width:768px){
   header{
     flex-wrap: nowrap;
   }
-  .logo{
+  nav,.logo{
     flex:none;
   }
-  nav{
-    flex:none;
-  }
-
-  .toggle, .submenu-click, .submenu-2-click, .submenu-3-click{
+  .toggle, nav label{
     display: none;
   }
   nav ul{
     display:flex;
   }
-
   nav li{
     position: relative;
   }
@@ -135,19 +123,19 @@ nav a:hover, .submenu-click:hover{
     overflow: hidden;
     transition: max-height .2s ease-out;
   }
-  .submenu-1, .submenu-3{
-    flex-direction: column;
-    position: absolute;
-    width:140px;
-    left:0;
-  }
   li:hover >ul{
     max-height: 100vh;
     overflow:visible;
   }
-  .submenu-2{
+  [class^=submenu]{
     flex-direction: column;
     position: absolute;
+  }
+  .submenu-1, .submenu-3{ 
+    width:140px;
+    left:0;
+  }
+  .submenu-2{
     top:0px;
     left:100%;
     width:120px;
