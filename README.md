@@ -1,4 +1,4 @@
-# dropdown-responsive-flexbox-nav
+# Dropdown responsive Navbar
 This is a Navbar that utilizes flexbox. The dropdown menus are displayed 
 using the "checkbox trick", which eliminates the need for javascript.
 
